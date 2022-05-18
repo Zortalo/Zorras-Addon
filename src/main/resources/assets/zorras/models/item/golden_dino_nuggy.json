@@ -1,0 +1,6 @@
+{
+   "parent": "item/generated",
+   "textures": {
+     "layer0": "zorras:item/golden_dino_nuggy"
+   }
+ }
