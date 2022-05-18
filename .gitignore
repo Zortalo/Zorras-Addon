@@ -31,3 +31,9 @@ bin/
 # fabric
 
 run/
+
+# github
+.github/
+
+# extra
+hs_err_pid7852.log
