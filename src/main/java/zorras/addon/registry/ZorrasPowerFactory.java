@@ -8,11 +8,11 @@ import zorras.addon.power.*;
 public class ZorrasPowerFactory {
 
    public static void register(){
-      register(PowderSnowSink.getFactory());
+      register(ModifyPowderSnow.getFactory());
   }
 
 
-public static void register(PowerFactory<?> serializer) {
-   Registry.register(ApoliRegistries.POWER_FACTORY, serializer.getSerializerId(), serializer);
-}
+  public static void register(PowerFactory<?> serializer) {
+      Registry.register(ApoliRegistries.POWER_FACTORY, serializer.getSerializerId(), serializer);
+   }
 }

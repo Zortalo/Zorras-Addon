@@ -6,7 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "PowderSnowMixin"
+    "PowderSnowMixin",
+    "EntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
