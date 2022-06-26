@@ -6,8 +6,6 @@ import org.apache.logging.log4j.Logger;
 import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 import zorras.addon.registry.*;
-import zorras.addon.registry.action.*;
-import zorras.addon.registry.condition.*;
 
 public class ZorrasMod implements ModInitializer {
 	public static final String MOD_ID = "zorras";
@@ -24,7 +22,5 @@ public class ZorrasMod implements ModInitializer {
 
 		// Origin Registry
 		ZorrasPowerFactory.register();
-		ZorrasItemActions.register();
-		ZorrasEntityConditions.register();
 	}
 }
