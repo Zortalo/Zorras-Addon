@@ -7,12 +7,13 @@ import zorras.addon.power.*;
 
 public class ZorrasPowerFactory {
 
-   public static void register(){
+   public static void register() {
       register(ModifyPowderSnow.getFactory());
-  }
+      register(PreventSoulSandSlow.getFactory());
+      register(RideUnderWater.getFactory());
+   }
 
-
-  public static void register(PowerFactory<?> serializer) {
+   public static void register(PowerFactory<?> serializer) {
       Registry.register(ApoliRegistries.POWER_FACTORY, serializer.getSerializerId(), serializer);
    }
 }
