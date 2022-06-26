@@ -3,7 +3,6 @@ package zorras.addon.mixin;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PowderSnowBlock;
-import net.minecraft.block.SoulSandBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.Vec3d;
 import zorras.addon.power.*;
@@ -30,17 +29,5 @@ public class EntityMixin {
                 }
             }
         }
-        Block soulsand = state.getBlock();
-        if (soulsand instanceof SoulSandBlock) {
-            for (PreventSoulSandSlow soulSandSlow : PowerHolderComponent.getPowers(entity, PreventSoulSandSlow.class)) {
-                if (soulSandSlow.soulSandSlow())
-                    cir.cancel();
-            }
-        }
-    }
-
-    @Inject(method = "canBeRiddenInWater", at = @At("HEAD"), cancellable = true)
-    private boolean canRideUnderWater() {
-        return true;
     }
 }
