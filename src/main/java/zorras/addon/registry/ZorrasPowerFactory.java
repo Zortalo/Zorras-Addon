@@ -11,6 +11,7 @@ public class ZorrasPowerFactory {
       register(ModifyPowderSnow.getFactory());
       register(PreventBlockSlowness.getFactory());
       register(RideUnderWater.getFactory());
+      register(ModifyBlockBounce.getFactory());
    }
 
    public static void register(PowerFactory<?> serializer) {
