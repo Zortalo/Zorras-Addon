@@ -10,14 +10,9 @@ archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
 
-repositories {
+repositories {	
 	maven {
-		name = "Ladysnake Libs"
 		url = 'https://ladysnake.jfrog.io/artifactory/mods'
-	}
-	maven {
-		name = "JitPack"
-		url = 'https://jitpack.io'
 	}
 	 maven {
         url "https://maven.jamieswhiteshirt.com/libs-release"
@@ -37,6 +32,10 @@ repositories {
 	maven {
 		url "https://maven.terraformersmc.com/"
 	}
+	maven {
+		name = "JitPack"
+		url = 'https://jitpack.io'
+	}
 	mavenLocal()
 }
 
@@ -50,6 +49,10 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	//Origins
 	modImplementation "com.github.apace100:origins-fabric:${project.origins_version}"
+	//Pehkui
+	modImplementation("com.github.Virtuoel:Pehkui:${pehkui_version}", {
+		exclude group: "net.fabricmc.fabric-api"
+	})
 }
 
 processResources {
