@@ -9,6 +9,8 @@ public class ZorrasPowerFactory {
 
    public static void register() {
       register(ModifyPowderSnow.getFactory());
+      register(PreventBlockSlowness.getFactory());
+      register(RideUnderWater.getFactory());
    }
 
    public static void register(PowerFactory<?> serializer) {

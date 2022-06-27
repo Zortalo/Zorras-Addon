@@ -7,7 +7,7 @@
   "client": [
     "PowderSnowMixin",
     "EntityMixin",
-    "ItemStackMixin"
+    "LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

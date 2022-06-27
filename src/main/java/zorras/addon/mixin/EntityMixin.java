@@ -17,17 +17,23 @@ import io.github.apace100.apoli.component.PowerHolderComponent;
 @Mixin(Entity.class)
 public class EntityMixin {
     @Inject(method = "slowMovement", at = @At("HEAD"), cancellable = true)
-    private void zorras$slowMovement(BlockState state, Vec3d multiplier, CallbackInfo cir) {
+    private void zorras$slowMovement(BlockState state, Vec3d multiplier, CallbackInfo zx) {
         Entity entity = (Entity) (Object) this;
 
         Block powdersnow = state.getBlock();
         if (powdersnow instanceof PowderSnowBlock) {
 
-            for (ModifyPowderSnow powderSnowSlow : PowerHolderComponent.getPowers(entity, ModifyPowderSnow.class)) {
+            for (ModifyPowderSnow powderSnowSlow : PowerHolderComponent.getPowers(entity,
+                    ModifyPowderSnow.class)) {
                 if (powderSnowSlow.doesPreventSlowness()) {
-                    cir.cancel();
+                    zx.cancel();
                 }
             }
-        }
+    }
+    PowerHolderComponent.getPowers(Entity.class.cast(this), PreventBlockSlowness.class).forEach(preventBlockSlowness -> {
+			if (preventBlockSlowness.shouldPreventSlowness(state.getBlock())) {
+				zx.cancel();
+			}
+		});
     }
 }
